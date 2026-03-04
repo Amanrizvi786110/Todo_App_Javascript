@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+    --primary-color: #6c5ce7;
+    --secondary-color: #a29bfe;
+    --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --glass-bg: rgba(255, 255, 255, 0.95);
+    --text-color: #2d3436;
+    --light-gray: #dfe6e9;
+    --danger-color: #ff7675;
+    --success-color: #00b894;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: var(--bg-gradient);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background: var(--glass-bg);
+    width: 100%;
+    max-width: 500px;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.task-input {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 1.5rem;
+}
+
+#taskInput {
+    flex: 1;
+    padding: 12px 15px;
+    border: 2px solid var(--light-gray);
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+    outline: none;
+}
+
+#taskInput:focus {
+    border-color: var(--primary-color);
+}
+
+#addTaskBtn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.2s, background 0.3s;
+}
+
+#addTaskBtn:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 1.5rem;
+}
+
+.filters button {
+    background: transparent;
+    border: 1px solid var(--light-gray);
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: all 0.3s;
+}
+
+.filters button:hover,
+.filters button:focus {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    background: white;
+    border-bottom: 1px solid var(--light-gray);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+li:first-child {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+li:last-child {
+    border-bottom: none;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+li.completed span {
+    text-decoration: line-through;
+    color: #b2bec3;
+}
+
+.task-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.priority-badge {
+    font-size: 0.75rem;
+    margin-top: 4px;
+    font-weight: 600;
+}
+
+.task-buttons button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    margin-left: 8px;
+    transition: transform 0.2s;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.task-buttons button:hover {
+    transform: scale(1.2);
+    background-color: #f1f2f6;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
